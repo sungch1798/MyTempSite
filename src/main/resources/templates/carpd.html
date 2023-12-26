@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>模型商品展示</h1>
+<div style="background: blanchedalmond;width: 30vw;height: 50vh;text-align: center;padding-top: 5px;border-style:ridge;">
+    <P th:each="car :${cars}" th:text="${car}">
+        顯示模型資料</P>
+</div>
+
 </body>
 </html>

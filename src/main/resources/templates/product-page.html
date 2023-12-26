@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" xmlns="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@
       <div class="row">
         <div class="top-bar-left">
           <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text">XX購物網站</li>
+            <li class="menu-text" >XX購物網站</li>
             <li class="has-submenu">
               <a href="#">產品</a>
               <ul class="submenu menu vertical" data-submenu>
@@ -85,10 +85,10 @@
 
         <div class="row">
           <div class="small-3 columns">
-            <label for="middle-label" class="middle">類別</label>
+            <label for="middle-label" class="middle">價格</label>
           </div>
           <div class="small-9 columns">
-            <input type="text" id="middle-label" placeholder="無線藍牙鍵盤">
+            <input type="text" id="middle-label" placeholder="1999">
           </div>
         </div>
 
@@ -96,8 +96,8 @@
 
         <div class="small secondary expanded button-group">
             <a class="button">Facebook</a>
-            <a class="button">Twitter</a>
-            <a class="button">IG</a>
+            <a class="button">Telegram</a>
+            <a class="button">Instagram</a>
           </div>
         </div>
     </div>
@@ -105,77 +105,103 @@
     <div class="column row">
       <hr>
       <ul class="tabs" data-tabs id="example-tabs">
-        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Reviews</a></li>
-        <li class="tabs-title"><a href="#panel2">Similar Products</a></li>
+        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">推薦商品</a></li>
+        <li class="tabs-title"><a href="#panel2">相似產品</a></li>
       </ul>
       <div class="tabs-content" data-tabs-content="example-tabs">
         <div class="tabs-panel is-active" id="panel1">
-          <h4>Reviews</h4>
+          <h4>推薦給您</h4>
           <div class="media-object stack-for-small">
             <div class="media-object-section">
-              <img class="thumbnail" src="https://cs-a.ecimg.tw/items/DSAR9EA900FWMWJ/000001_1702881242.jpg">
+              <img class="thumbnail" style="width: 200px" src="https://cs-a.ecimg.tw/items/DSAR9EA900FWMWJ/000001_1702881242.jpg">
             </div>
             <div class="media-object-section">
               <h5>羅技 MX Keys Mini 無線鍵盤</h5>
               <p>微凹鍵帽，完美敲擊：
                 採 Perfect Stroke 技術，及球型碟狀的按鍵設計，讓指尖敲擊鍵更精準。
                 精簡尺寸，節省空間，好攜帶：</p>
+              <H3 style="color: royalblue">th:text="${變數}"; 相關內容</H3>
+              <P style="color: hotpink" th:text="${session.msg1}"></P>
+              <P style="color: rosybrown" th:text="${msg1}"></P>
+
+              <P style="color: cornflowerblue" th:text="${msg2}"></P>
+              <P style="color: violet" th:text="${param.mesg3}"></P>
+
+              <P style="color: navy" th:text="${#vars.msg2}"></P>
             </div>
           </div>
           <div class="media-object stack-for-small">
             <div class="media-object-section">
-              <img class="thumbnail" src="https://img.pchome.com.tw/cs/items/DSAR82A900GOI9V/l000001_1703498270.jpg">
+              <img class="thumbnail" style="width: 200px" src="https://img.pchome.com.tw/cs/items/DSAR0SA900GEH6T/l000002_1703489719.jpg">
             </div>
             <div class="media-object-section">
-              <h5>羅技 POP KEYS 無線機械式鍵盤(茶軸)</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
+              <h5>羅技 MX Anywhere 3S 無線行動滑鼠</h5>
+              <p>Quick Clicks 全新靜音體驗
+                8000 DPI 精準追蹤
+                SMART ACTIONS 智能啟動，一鍵設定完成複雜任務</p>
+              5 + 3 =<spaan th:text="${5+3}">0</spaan><br>
+              5 - 3 =<spaan th:text="${5 - 3}">0</spaan><br>
+              5 * 3 =<spaan th:text="${5*3}">0</spaan><br>
+              5 / 3 =<spaan th:text="${5/3}">0</spaan><br><hr>
+
+              5 &gt; 3 =<spaan th:text="${5>3}">0</spaan><br>
+              5 &lt; 3 =<spaan th:text="${5<3}">0</spaan><br>
+              5 != 3 =<spaan th:text="${5 != 3}">0</spaan><br>
+              5 = 3 =<spaan th:text="${5 == 3}">0</spaan><br>
+              5 &ge; 3 =<spaan th:text="${5>=3}">0</spaan><br>
+              5 &le; 3 =<spaan th:text="${5<=3}">0</spaan><br>
+
+
+
             </div>
           </div>
           <div class="media-object stack-for-small">
             <div class="media-object-section">
-              <img class="thumbnail" src="https://placehold.it/200x200">
+              <img class="thumbnail" style="width: 200px" src="https://cs-a.ecimg.tw/items/DSAR23A900GEW5H/000001_1703491995.jpg">
             </div>
             <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
+              <h5>羅技G Pro X 2 LIGHTSPEED無線電競耳麥</h5>
+              <p>50公釐石墨烯單體
+                35公釐有線/LIGHTSPEED無線/藍牙三模連線
+                舒適耐用的設計</p>
             </div>
           </div>
           <label>
             My Review
-            <textarea placeholder="None"></textarea>
+            <textarea placeholder="請輸入訊息!!"></textarea>
           </label>
-          <button class="button">Submit Review</button>
+          <button class="button">送出訊息!!</button>
         </div>
         <div class="tabs-panel" id="panel2">
           <div class="row medium-up-3 large-up-5">
             <div class="column">
-              <img class="thumbnail" src="https://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
+              <img class="thumbnail" style="width: 350px;height: 220px" src="https://myship.7-11.com.tw/i/cgdm/GM2305058146174/2305050140201225.jpg">
+              <h5>文創商品 <small>$10</small></h5>
+              <p>台灣鶯歌陶瓷吸水杯墊 維亞文創商品 </p>
               <a href="#" class="button hollow tiny expanded">Buy Now</a>
             </div>
             <div class="column">
-              <img class="thumbnail" src="https://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
+              <img class="thumbnail" style="width: 350px;height: 220px" src="https://myship.7-11.com.tw/i/cgdm/GM2305058146174/2305050140177184.jpg">
+              <h5>文創商品 <small>$25</small></h5>
+              <p>台灣文創設計帆布袋 維亞文創商品</p>
               <a href="#" class="button hollow tiny expanded">Buy Now</a>
             </div>
             <div class="column">
-              <img class="thumbnail" src="https://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
+              <img class="thumbnail" style="width: 350px;height: 220px" src="https://myship.7-11.com.tw/i/cgdm/GM2305178620514/2312200215128745.jpg">
+              <h5>文創商品 <small>$30</small></h5>
+              <p>Dinotaeng 絨毛娃娃 BOBO Plush Doll 25cm</p>
               <a href="#" class="button hollow tiny expanded">Buy Now</a>
             </div>
             <div class="column">
-              <img class="thumbnail" src="https://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
+              <img class="thumbnail" style="width: 350px;height: 220px" src="https://myship.7-11.com.tw/i/cgdm/GM2305178620514/2312200215123234.jpg">
+              <h5>文創商品 <small>$20</small></h5>
+              <p>Dinotaeng airpods 立體袋鼠耳機殼</p>
               <a href="#" class="button hollow tiny expanded">Buy Now</a>
             </div>
             <div class="column">
-              <img class="thumbnail" src="https://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
+              <img class="thumbnail" style="width: 350px;height: 220px" src="https://myship.7-11.com.tw/i/cgdm/GM2305178620514/2312200215079009.jpg">
+              <h5>文創商品 <small>$50</small></h5>
+              <p>Dinotaeng Quokka 筆電包 11/13/15吋</p>
               <a href="#" class="button hollow tiny expanded">Buy Now</a>
             </div>
           </div>
@@ -186,11 +212,11 @@
     <div class="row column">
       <hr>
       <ul class="menu">
-        <li>Yeti Store</li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li class="float-right">Copyright 2016</li>
+        <li th:text="XT電競購物網站">Yeti Store</li>
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">關於我</a></li>
+        <li><a href="#">聯絡我們</a></li>
+        <li class="float-right">Copyright 2023</li>
       </ul>
     </div>
 

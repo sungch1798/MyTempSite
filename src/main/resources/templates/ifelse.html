@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>if 判斷式</h1>
+<div th:if="${5 > 3}" style="background: skyblue;width: 300px;height: 100px;text-align: center">
+    <p>5 > 3 成立才會出現文字框及內容喔</p>
+</div>
+<div th:if="${5 < 9}" style="background: khaki;width: 300px;height: 100px;text-align: center">
+    <p>5 < 9 成立才會出現文字框及內容喔</p>
+</div>
+<div th:if="${isAdmin}" style="background: aquamarine;width: 300px;height: 100px;text-align: center">
+    <p> 您是系統管理員才會出現文字框及內容喔</p>
+</div>
+<h3>if  unless 測試</h3>
+<div th:if="${param.msg}" style="background: aquamarine;width: 300px;height: 100px;text-align: center">
+    <p> 您是系統管理員才會出現文字框及內容喔</p>
+</div>
+
+<div th:unless="${ param.msg }" style="background: violet;width: 300px;height: 100px;text-align: center">
+    <p> 您不是系統管理員才會出現文字框及內容喔</p>
+</div>
+<h3>#string.equals測試</h3>
+
+<div th:if="${#strings.equals(param.msg, 'Admin')}" style="background: lightskyblue;width: 300px;height: 100px;text-align: center">
+    <p> 如果傳入的字串為Admin會出現這段文字，大小寫需相同</p>
+</div>
+
+<div th:if="${#strings.equalsIgnoreCase(param.msg, 'Admin')}" style="background: moccasin;width: 300px;height: 100px;text-align: center">
+    <p> 如果傳入的字串為admin會出現這段文字，大小寫無需相同</p>
+</div>
+
+
 </body>
 </html>
